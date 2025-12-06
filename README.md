@@ -2,7 +2,7 @@
 ---
 This project attempts to use the dataset from the HULL Tactical Kaggle Competition, to devise a trading strategy for S&P500 using various time series and modeling methodologies.
 
-# <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gear/gear-original.svg" width="28"/> Technologies Used
+# 📦 Technologies Used
 ---
 - Python
 - JupterNotebook
@@ -11,7 +11,7 @@ This project attempts to use the dataset from the HULL Tactical Kaggle Competiti
 - Seaborn, Matplotlib
 - Stats
 
-# <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gear/gear-original.svg" width="28"/> Process
+# 📝 Process
 ---
 
 
