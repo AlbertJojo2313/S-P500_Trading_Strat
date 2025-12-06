@@ -13,5 +13,16 @@ This project attempts to use the dataset from the HULL Tactical Kaggle Competiti
 
 # 📝 Process
 ---
+## 🔍 Exploratory Data Analysis (EDA)
+For EDA on the dataset, I found the missing percentages of the features. I also checked for multiple assumptions:
+- Stationarity (ADF Test)
+- Normality (Shapiro Wilk)
+- Homoscedasticity (Het-ARCH)
+- Autocorrelation & PACF
 
+These statistical tests and other visualizations helped narrow down the type of the models to use to complete this task.
+
+## 👷 Data Preparation for Model Training
+Based on the EDA results, I determined that simple models would not be able to
+capture the complex patterns and relationships between the data. So I chose to do tree-based model: XGBoost.
 
