@@ -39,21 +39,23 @@ To help the model pick up underlying patterns in the dataset, I engineered a few
 ---
 To train the model, I had to use a differnt dataset splitting techniqe. I used the **time series split** from the scikit-learn library. This technique preserves the chronological order of the dataset; which is critical to avoid **look ahead bias**
 
-Since, the output for this project is an allocation in the range between [0-2].
+Since the output for this project is an allocation in the range **[0–2]**:
 
-- 0 = Cash position (Cash on hand).
-- 1 = 100% Invested in the market.
-- 2 = 200% Invested (Leveraged).
+- **0** → Cash position (fully out of the market)  
+- **1** → 100% invested  
+- **2** → 200% invested (leveraged)
 
-To accomplish this task, I used a modified **sigmoid** function that returns the value between [0-2]. The modified equation is shown below:
+To generate allocations in this range, I used a **modified sigmoid function** that scales the output accordingly. The equation is shown below:
 
 $$
-\sigma = \frac{\lambda}{(1 + e^{-k * x})}
+\sigma(x) = \frac{\lambda}{1 + e^{-k\,x}}
 $$
-where \\
-- $\lambda$ = scale factor
-- k = sensitivity
-- x = market_excess_returns
+
+Where:  
+- **$\lambda$** = scale factor (sets the maximum output, e.g., 2)  
+- **$k$** = sensitivity (controls how reactive the allocation is to changes)  
+- **$x$** = market\_excess\_returns
+
 
 
 
