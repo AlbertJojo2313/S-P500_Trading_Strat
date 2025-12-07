@@ -20,9 +20,9 @@ For EDA on the dataset, I found the missing percentages of the features. I also 
 - Normality (Shapiro Wilk)
 - Homoscedasticity (Het-ARCH)
 - Autocorrelation & PACF
+
 These statistical tests and other visualizations helped narrow down the type of the models to use to complete this task.
 
----
 ## 👷 Data Preparation & Model Training
 Based on the EDA results, I determined that simple models would not be able to
 capture the complex patterns and relationships between the data. So I chose to do tree-based model: XGBoost.
@@ -39,7 +39,21 @@ To help the model pick up underlying patterns in the dataset, I engineered a few
 ---
 To train the model, I had to use a differnt dataset splitting techniqe. I used the **time series split** from the scikit-learn library. This technique preserves the chronological order of the dataset; which is critical to avoid **look ahead bias**
 
-Since, the output for this project is an allocation in the range between [0-2], I had to find some way to use my predicted market_excess_returns
+Since, the output for this project is an allocation in the range between [0-2].
+
+- 0 = Cash position (Cash on hand).
+- 1 = 100% Invested in the market.
+- 2 = 200% Invested (Leveraged).
+
+To accomplish this task, I used a modified **sigmoid** function that returns the value between [0-2]. The modified equation is shown below:
+
+$$
+\sigma = \frac{\lambda}{(1 + e^{-k * x})}
+$$
+where \\
+- $\lambda$ = scale factor
+- k = sensitivity
+- x = market_excess_returns
 
 
 
