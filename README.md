@@ -20,8 +20,8 @@ For EDA on the dataset, I found the missing percentages of the features. I also 
 - Normality (Shapiro Wilk)
 - Homoscedasticity (Het-ARCH)
 - Autocorrelation & PACF
-
 These statistical tests and other visualizations helped narrow down the type of the models to use to complete this task.
+
 ---
 ## 👷 Data Preparation & Model Training
 Based on the EDA results, I determined that simple models would not be able to
